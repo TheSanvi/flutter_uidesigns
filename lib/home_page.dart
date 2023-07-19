@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                           CircleAvatar(
                             backgroundImage: AssetImage("images/instagrad.jpeg"),
                             child: CircleAvatar(
-                              radius: 32,
+                              radius:32,
                               backgroundImage: AssetImage(profileimages[index]),
                             ),
                           ),
@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
                           radius: 14,
                           backgroundImage: AssetImage("images/instagrad.jpeg"),
                           child: CircleAvatar(
-                            radius: 12,
+                            radius: 32,
                             backgroundImage: AssetImage(profileimages[index]),
                           ),
                         ),
