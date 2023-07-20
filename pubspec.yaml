@@ -56,36 +56,11 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - images/1.jpeg
-    - images/2.jpeg
-    - images/3.jpeg
-    - images/4.jpeg
-    - images/5.jpeg
-    - images/6.jpeg
-    - images/7.jpeg
-    - images/8.jpeg
-    - images/instagrad.jpeg
-    - images/instalogo.jpeg
-    - images/instatitle.png
-    - images/post1.jpeg
-    - images/post2.jpeg
-    - images/post3.jpeg
-    - images/post4.jpeg
-    - images/post5.jpeg
-    - images/post6.jpeg
-    - images/post7.jpeg
-    - images/post8.jpeg
-    - images/post8.jpeg
-    - images/post9.jpeg
-    - images/post10.jpeg
-    - images/post11.jpeg
-    - images/post12.jpeg
-
-
+assets:
+  - assets/pingu.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

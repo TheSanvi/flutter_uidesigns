@@ -1,91 +1,103 @@
 import 'package:flutter/material.dart';
-import 'package:instagramuidesign/homepage.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MaterialApp(
+  debugShowCheckedModeBanner: false,
+  home: ID_Card(),
+));
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "flutter Demo",
-      theme: ThemeData(
-          iconTheme: IconThemeData(color: Color.fromRGBO(40, 40, 40, 1)),
-          appBarTheme: AppBarTheme(elevation: 1,color: Colors.white,iconTheme:IconThemeData(color: Color.fromRGBO(40, 40, 40, 1)) ),
-          primarySwatch: Colors.deepPurple,
-          visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int currentPage = 0;
+class ID_Card extends StatelessWidget {
+  const ID_Card({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomePage(),
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
+      backgroundColor: Colors.grey[900],
+      appBar: AppBar(
+        title: Text("Virtual World Characters"),
+        centerTitle: true,
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
+      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Spacer(),
-            IconButton(
-              icon: Icon(
-                Icons.home,
-                color: currentPage == 0
-                    ? Color.fromRGBO(203, 73, 101, 1)
-                    : Color.fromRGBO(40, 40, 40, 1),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/pingu.jpg"),
+                radius: 40.0,
               ),
-              onPressed: () {
-                setState(() {
-                  currentPage = 0;
-                });
-              },
             ),
-            Spacer(),
-            IconButton(
-              icon: Icon(
-                Icons.search,
-                color: currentPage == 1
-                    ? Color.fromRGBO(203, 73, 101, 1)
-                    : Color.fromRGBO(40, 40, 40, 1),
-              ),
-              onPressed: () {
-                setState(() {
-                  currentPage = 1;
-                });
-              },
+            Divider(
+              height: 100.0,
+              color: Colors.grey[800],
             ),
-            Spacer(),
-            IconButton(
-              icon: Icon(Icons.video_call),
-              onPressed: () {},
+            Text("NAME",
+                style: TextStyle(color: Colors.grey, letterSpacing: 2.0)),
+            SizedBox(
+              height: 9.0,
             ),
-            Spacer(),
-            IconButton(
-              icon: Icon(Icons.shop),
-              onPressed: () {},
+            Text("PINGU",
+                style: TextStyle(
+                  color: Colors.amberAccent,
+                  letterSpacing: 2.0,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                )),
+            SizedBox(height: 30.0),
+            Text("CURRENT LEVEL",
+                style: TextStyle(color: Colors.grey, letterSpacing: 2.0)),
+            SizedBox(
+              height: 10.0,
             ),
-            Spacer(),
-            IconButton(
-              icon: Icon(Icons.person),
-              onPressed: () {},
+            Text("6 ",
+                style: TextStyle(
+                  color: Colors.amberAccent,
+                  letterSpacing: 2.0,
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                )),
+            SizedBox(height: 30.0),
+            Row(
+              children: [
+                Icon(
+                  Icons.email,
+                  color: Colors.blueGrey[400],
+                ),
+                SizedBox(width: 10.0),
+                Text("pinguzuzu@gmail.com",
+                    style: TextStyle(
+                      color: Colors.blueGrey[400],
+                      fontSize: 18.0,
+                      letterSpacing: 1.0,
+                    )),
+              ],
+            )
+          ],
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(child:Text("description"),
+              decoration: BoxDecoration(
+                  color: Colors.grey.shade400
+              ),),
+            ListTile(
+              title: const Text("create world"),
             ),
+            Column(
+              children: [
+              ],
+
+            )
           ],
         ),
       ),
     );
   }
 }
+
+
